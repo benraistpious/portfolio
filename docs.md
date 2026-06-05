@@ -43,3 +43,4 @@ This project is a clean, monochromatic brutalist portfolio for a UI/UX designer.
 ## Changelog
 * **[2026-06-06]**: Initial documentation baseline established based on project summary. Project moved to new folder (`d:\works\pweb\portfolio`) and pushed to Git.
 * **[2026-06-06]**: Changed admin dashboard password to `benrais123`.
+* **[2026-06-06]**: UI Bug Fixes: Removed drop shadow from project cards on hover and updated contact email link text to read "Send me an Email" instead of displaying the literal address.

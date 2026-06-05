@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benrais | UI/UX Designer</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="splashScreen" class="splash-screen">
+        <div class="splash-content">
+            <div class="loading-rect">
+                <div class="loading-slice"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blur Overlay -->
+    <div class="page-overlay" id="overlay"></div>
+
+    <!-- Top Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-trigger" id="navbarTrigger">
+            <span>BENRAIS. &nbsp;&nbsp;&mdash;&nbsp;&nbsp; [MENU]</span>
+        </div>
+        <nav class="navbar-content" id="navbarContent">
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Work</a></li>
+                <li><a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1.5rem; border: none;">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="section hero">
+            <div class="container">
+                <span class="subtitle">UI/UX Designer</span>
+                <h1 class="hero-title">Designing experiences that make sense.</h1>
+                <p class="hero-desc">I'm Benrais, a UI/UX designer focused on turning complex ideas into simple, meaningful digital experiences. I blend usability, visual design, and problem-solving to create products that people genuinely enjoy using.</p>
+                
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    <a href="#about" class="btn btn-secondary">About Me</a>
+                </div>
+            </div>
+
+            <!-- Infinite Marquee -->
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <span>User Research</span><span class="marquee-dot">•</span>
+                    <span>User Flows</span><span class="marquee-dot">•</span>
+                    <span>Wireframing</span><span class="marquee-dot">•</span>
+                    <span>Info Architecture</span><span class="marquee-dot">•</span>
+                    <span>Usability Testing</span><span class="marquee-dot">•</span>
+                    <span>UI Design</span><span class="marquee-dot">•</span>
+                    <span>Visual Design</span><span class="marquee-dot">•</span>
+                    <span>Design Systems</span><span class="marquee-dot">•</span>
+                    <span>Prototyping</span><span class="marquee-dot">•</span>
+                    <span>Responsive Design</span><span class="marquee-dot">•</span>
+                    <span>Interaction Design</span><span class="marquee-dot">•</span>
+                    <!-- Duplicate for infinite loop -->
+                    <span>User Research</span><span class="marquee-dot">•</span>
+                    <span>User Flows</span><span class="marquee-dot">•</span>
+                    <span>Wireframing</span><span class="marquee-dot">•</span>
+                    <span>Info Architecture</span><span class="marquee-dot">•</span>
+                    <span>Usability Testing</span><span class="marquee-dot">•</span>
+                    <span>UI Design</span><span class="marquee-dot">•</span>
+                    <span>Visual Design</span><span class="marquee-dot">•</span>
+                    <span>Design Systems</span><span class="marquee-dot">•</span>
+                    <span>Prototyping</span><span class="marquee-dot">•</span>
+                    <span>Responsive Design</span><span class="marquee-dot">•</span>
+                    <span>Interaction Design</span><span class="marquee-dot">•</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="section about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>I'm a UI/UX designer who enjoys turning complex ideas into simple, meaningful experiences.</p>
+                        <p>My interest in design goes beyond screens. I'm fascinated by how visuals, stories, and interactions influence the way people think and behave. Whether I'm designing a mobile app, creating a marketing visual, or exploring a new concept, I focus on finding the simplest way to communicate an idea.</p>
+                        <p>I believe good design should be clear, purposeful, and memorable. Every project is an opportunity to learn, experiment, and create something that genuinely helps people.</p>
+                    </div>
+                    <div class="fun-fact">
+                        <h3>Highlight</h3>
+                        <p class="quote">"Good design is not when there's nothing left to add. It's when there's nothing left to remove."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Process Section -->
+        <section id="skills" class="section skills">
+            <div class="container">
+                
+                <h2 class="section-title">Skills & Tools</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>UX Design</h3>
+                        <ul class="icon-list">
+                            <li><iconify-icon icon="ph:users"></iconify-icon> User Research</li>
+                            <li><iconify-icon icon="ph:tree-structure"></iconify-icon> User Flows</li>
+                            <li><iconify-icon icon="ph:squares-four"></iconify-icon> Wireframing</li>
+                            <li><iconify-icon icon="ph:list-dashes"></iconify-icon> Info Architecture</li>
+                            <li><iconify-icon icon="ph:check-circle"></iconify-icon> Usability Testing</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>UI Design</h3>
+                        <ul class="icon-list">
+                            <li><iconify-icon icon="ph:palette"></iconify-icon> Visual Design</li>
+                            <li><iconify-icon icon="ph:stack"></iconify-icon> Design Systems</li>
+                            <li><iconify-icon icon="ph:play-circle"></iconify-icon> Prototyping</li>
+                            <li><iconify-icon icon="ph:device-mobile"></iconify-icon> Responsive Design</li>
+                            <li><iconify-icon icon="ph:cursor-click"></iconify-icon> Interaction Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools</h3>
+                        <ul class="icon-list">
+                            <li><iconify-icon icon="simple-icons:figma"></iconify-icon> Figma</li>
+                            <li><iconify-icon icon="simple-icons:adobephotoshop"></iconify-icon> Photoshop</li>
+                            <li><iconify-icon icon="simple-icons:adobeillustrator"></iconify-icon> Illustrator</li>
+                            <li><iconify-icon icon="simple-icons:notion"></iconify-icon> Notion</li>
+                            <li><iconify-icon icon="ph:robot-bold"></iconify-icon> AI Tools & Workflows</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>What I Value</h3>
+                        <ul class="icon-list">
+                            <li><iconify-icon icon="ph:sparkle"></iconify-icon> Simplicity</li>
+                            <li><iconify-icon icon="ph:wheelchair"></iconify-icon> Accessibility</li>
+                            <li><iconify-icon icon="ph:user-focus"></iconify-icon> User-Centered</li>
+                            <li><iconify-icon icon="ph:book-open"></iconify-icon> Constant Learning</li>
+                            <li><iconify-icon icon="ph:magnifying-glass"></iconify-icon> Details</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Design Process -->
+                <div class="design-process">
+                    <h3>My Design Process</h3>
+                    <div class="process-flow">
+                        <span>Research</span>
+                        <span class="arrow">→</span>
+                        <span>Define</span>
+                        <span class="arrow">→</span>
+                        <span>Ideate</span>
+                        <span class="arrow">→</span>
+                        <span>Wireframe</span>
+                        <span class="arrow">→</span>
+                        <span>Prototype</span>
+                        <span class="arrow">→</span>
+                        <span>Test</span>
+                        <span class="arrow">→</span>
+                        <span>Iterate</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                
+                <div class="projects-grid-2col" id="projectsGrid">
+                    <!-- Projects will be dynamically injected here by main.js from localStorage -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-content">
+                    <h2 class="contact-text">Let's build something brutal.</h2>
+                    <ul class="contact-links">
+                        <li><a href="mailto:benraistpious@gmail.com" class="btn btn-primary">benraistpious@gmail.com</a></li>
+                        <li><a href="https://www.linkedin.com/in/benraistpious/" target="_blank" class="btn btn-secondary">LinkedIn</a></li>
+                        <li><a href="https://www.behance.net/benraistpious" target="_blank" class="btn btn-secondary">Behance</a></li>
+                        <li><a href="https://instagram.com/benrais.design" target="_blank" class="btn btn-secondary">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="contact-footer">
+                    <p>&copy; 2026 Benrais. Built from scratch.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Floating Theme Toggle -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+        ☀
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

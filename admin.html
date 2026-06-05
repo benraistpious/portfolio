@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Dashboard | Brutal Portfolio</title>
+    
+    <!-- Google Fonts: Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconify for Icons -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Minimal overrides for admin layout */
+        body { padding: 4rem 2rem; background-color: var(--color-bg); }
+        .admin-container { max-width: 800px; margin: 0 auto; }
+        .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem; border-bottom: var(--border-thick); padding-bottom: 1rem; }
+        .form-group { margin-bottom: 2rem; }
+        .form-group label { display: block; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .form-control { width: 100%; padding: 1rem; font-family: var(--font-primary); font-size: 1rem; border: var(--border-thick); background: var(--color-bg); color: var(--color-text); }
+        .checkbox-group { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1rem; }
+        .checkbox-label { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 500; text-transform: uppercase; }
+        .project-list { margin-top: 4rem; display: flex; flex-direction: column; gap: 2rem; }
+        .admin-card { border: var(--border-thick); padding: 2rem; background: var(--color-bg); display: flex; justify-content: space-between; align-items: flex-start; }
+        .admin-card-actions { display: flex; gap: 1rem; }
+        .btn-danger { background-color: var(--color-accent); color: var(--color-bg); }
+        .btn-danger:hover { background-color: var(--color-text); color: var(--color-bg); }
+    </style>
+</head>
+<body class="dark-theme">
+
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1 class="section-title" style="margin:0;">CMS Dashboard</h1>
+            <a href="index.html" class="btn btn-secondary">Back to Site</a>
+        </header>
+
+        <section class="admin-section">
+            <h2 id="formTitle" style="margin-bottom: 2rem; text-transform: uppercase;">Add New Project</h2>
+            <form id="projectForm">
+                <div class="form-group">
+                    <label>Project Title</label>
+                    <input type="text" id="projTitle" class="form-control" required placeholder="e.g. Neo-Brutal E-Commerce">
+                </div>
+                
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="projDesc" class="form-control" rows="3" required placeholder="A short, punchy description of the project."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Project Link</label>
+                    <input type="url" id="projLink" class="form-control" placeholder="https://...">
+                </div>
+
+                <div class="form-group">
+                    <label>Banner Image (Optional)</label>
+                    <input type="file" id="projImage" class="form-control" accept="image/*">
+                    <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Images are automatically compressed to fit storage limits.</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Software Used</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label"><input type="checkbox" name="software" value="Figma"> Figma</label>
+                        <label class="checkbox-label"><input type="checkbox" name="software" value="Photoshop"> Photoshop</label>
+                        <label class="checkbox-label"><input type="checkbox" name="software" value="Illustrator"> Illustrator</label>
+                        <label class="checkbox-label"><input type="checkbox" name="software" value="Notion"> Notion</label>
+                        <label class="checkbox-label"><input type="checkbox" name="software" value="AI Tools"> AI Tools</label>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="submit" id="submitBtn" class="btn btn-primary">Save Project</button>
+                    <button type="button" id="cancelEditBtn" class="btn btn-secondary" style="display: none;">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="admin-section" style="margin-top: 6rem; border-top: var(--border-thick); padding-top: 4rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="text-transform: uppercase;">Manage Projects</h2>
+                <div style="display: flex; gap: 1rem;">
+                    <button id="exportBtn" class="btn btn-secondary">Export Backup</button>
+                    <!-- Hide actual file input, trigger via label -->
+                    <label for="importFile" class="btn btn-secondary" style="cursor: pointer; margin:0;">Import Backup</label>
+                    <input type="file" id="importFile" accept=".json" style="display: none;">
+                </div>
+            </div>
+
+            <div class="project-list" id="adminProjectsList">
+                <!-- Admin project cards generated by JS -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Admin JS logic -->
+    <script src="js/admin.js"></script>
+</body>
+</html>

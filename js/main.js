@@ -274,4 +274,35 @@ document.addEventListener('DOMContentLoaded', () => {
         // (Cursor event delegation handles dynamic hover automatically)
     }
 
+    // -----------------------------------------
+    // Motion Blur on Scroll
+    // -----------------------------------------
+    const mainContent = document.querySelector('.main-content');
+    let lastScrollTop = window.scrollY;
+    let scrollTimeout;
+
+    if (mainContent) {
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const scrollDelta = Math.abs(scrollTop - lastScrollTop);
+            lastScrollTop = scrollTop;
+
+            // Cap the blur so it doesn't get nauseating (max 8px)
+            const blurAmount = Math.min(scrollDelta * 0.05, 8); 
+
+            if (blurAmount > 0.5) {
+                // Remove transition during active scroll so it updates instantly
+                mainContent.style.transition = 'none';
+                mainContent.style.filter = `blur(${blurAmount}px)`;
+            }
+
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                // Smoothly return to sharp focus when scrolling stops
+                mainContent.style.transition = 'filter 0.3s ease-out';
+                mainContent.style.filter = 'blur(0px)';
+            }, 60);
+        });
+    }
+
 });

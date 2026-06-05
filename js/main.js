@@ -77,17 +77,20 @@ document.addEventListener('DOMContentLoaded', () => {
             mouseY = e.clientY;
         });
 
-        const morphElements = document.querySelectorAll('a, button, .navbar-trigger');
-
-        morphElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
+        // Event Delegation for dynamically generated elements
+        document.addEventListener('mouseover', (e) => {
+            const el = e.target.closest('a, button, .navbar-trigger');
+            if (el) {
                 targetElement = el;
-            });
-            el.addEventListener('mouseleave', () => {
-                if (targetElement === el) {
-                    targetElement = null;
-                }
-            });
+                el.style.cursor = 'none';
+            }
+        });
+
+        document.addEventListener('mouseout', (e) => {
+            const el = e.target.closest('a, button, .navbar-trigger');
+            if (el && targetElement === el) {
+                targetElement = null;
+            }
         });
 
         function animateCursor() {
@@ -129,8 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
         animateCursor();
         
         document.body.style.cursor = 'none';
-        const interactiveElements = document.querySelectorAll('a, button, .navbar-trigger');
-        interactiveElements.forEach(el => {
+        
+        // Initial hide for static elements
+        document.querySelectorAll('a, button, .navbar-trigger').forEach(el => {
             el.style.cursor = 'none';
         });
     }
@@ -266,6 +270,8 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             projectsGrid.innerHTML += cardHTML;
         });
+
+        // (Cursor event delegation handles dynamic hover automatically)
     }
 
 });

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Simple UX Password Gate
     const pw = prompt("Dashboard Locked. Please enter password:");
-    if (pw !== "benrasi123") {
+    if (pw !== "benrais123") {
         document.body.innerHTML = `
             <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; background:var(--color-bg); color:var(--color-accent); font-family:var(--font-primary);">
                 <h1 style="font-size:3rem; text-transform:uppercase;">Access Denied</h1>

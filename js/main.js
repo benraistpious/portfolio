@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const observerOptions = {
         root: null,
-        rootMargin: '-20% 0px -60% 0px', 
+        rootMargin: '0px -60% 0px -20%', 
         threshold: 0
     };
 
@@ -278,14 +278,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Motion Blur on Scroll
     // -----------------------------------------
     const mainContent = document.querySelector('.main-content');
-    let lastScrollTop = window.scrollY;
+    let lastScrollLeft = window.scrollX;
     let scrollTimeout;
 
     if (mainContent) {
         window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY;
-            const scrollDelta = Math.abs(scrollTop - lastScrollTop);
-            lastScrollTop = scrollTop;
+            const scrollLeft = window.scrollX;
+            const scrollDelta = Math.abs(scrollLeft - lastScrollLeft);
+            lastScrollLeft = scrollLeft;
 
             // Cap the blur so it doesn't get nauseating (max 8px)
             const blurAmount = Math.min(scrollDelta * 0.05, 8); 
@@ -304,5 +304,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 60);
         });
     }
+
+    // -----------------------------------------
+    // Horizontal Scroll Mapping
+    // -----------------------------------------
+    window.addEventListener('wheel', (e) => {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+            // Multiply deltaY to increase scroll speed (e.g., by 3)
+            window.scrollBy({
+                left: e.deltaY * 3,
+                behavior: 'auto'
+            });
+            e.preventDefault();
+        }
+    }, { passive: false });
 
 });

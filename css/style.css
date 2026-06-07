@@ -31,7 +31,8 @@ body.light-theme {
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px; /* Prevents navbar from covering titles */
+    scroll-padding-left: 0;
+    scroll-snap-type: x mandatory;
 }
 
 body {
@@ -39,8 +40,15 @@ body {
     color: var(--color-text);
     font-family: var(--font-primary);
     line-height: 1.5;
-    overflow-x: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
     position: relative;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
 }
 
 
@@ -245,22 +253,30 @@ body {
    ========================================= */
 .main-content {
     padding-top: 80px; /* Offset for new navbar */
-    width: 100%;
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
 }
 
 .container {
-    width: 100%;
+    width: max-content;
+    min-width: 100vw;
     margin: 0;
-    padding: 0 3%; /* Minimal padding so it hits the edges of the screen */
-    max-width: 100%; /* Fully edge-to-edge */
+    padding: 0 5vw;
 }
 
 .section {
-    padding: 8rem 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-bottom: var(--border-thick); /* Hard separation of sections */
+    border-right: var(--border-thick);
+    border-bottom: none;
+    min-width: 100vw;
+    width: max-content;
+    height: 100%;
+    scroll-snap-align: start;
 }
 
 .section-title {
@@ -323,7 +339,7 @@ body {
    MARQUEE (INFINITE SCROLL)
    ========================================= */
 .marquee-container {
-    width: 100%;
+    width: 100vw;
     overflow: hidden;
     background-color: var(--color-accent);
     color: var(--color-bg);
@@ -394,15 +410,19 @@ body {
    ABOUT SECTION
    ========================================= */
 .about-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    display: flex;
+    flex-direction: row;
     gap: 4rem;
+    width: max-content;
 }
 
 .about-text {
+    width: 60vw;
+    max-width: 800px;
     border: var(--border-thick);
     padding: 3rem;
     background-color: var(--color-bg);
+    scroll-snap-align: center;
 }
 
 .about-text p {
@@ -412,6 +432,8 @@ body {
 }
 
 .fun-fact {
+    width: 30vw;
+    max-width: 400px;
     background-color: var(--color-accent);
     padding: 3rem 2rem;
     border: var(--border-thick);
@@ -419,6 +441,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    scroll-snap-align: center;
 }
 
 .fun-fact h3 {
@@ -441,17 +464,21 @@ body {
    SKILLS & PROCESS SECTION
    ========================================= */
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-direction: row;
     gap: 2rem;
     margin-bottom: 6rem;
+    width: max-content;
 }
 
 .skill-category {
+    width: 350px;
+    flex-shrink: 0;
     border: var(--border-thick);
     padding: 2rem;
     background-color: var(--color-bg);
     transition: transform 0.2s;
+    scroll-snap-align: center;
 }
 
 .skill-category:hover {
@@ -528,17 +555,22 @@ body {
    ========================================= */
 /* Projects Grid 2 Col */
 .projects-grid-2col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
     gap: 4rem;
+    width: max-content;
 }
 
 .brutal-card {
+    width: 45vw;
+    max-width: 600px;
+    flex-shrink: 0;
     border: var(--border-thick);
     background-color: var(--color-bg);
     display: flex;
     flex-direction: column;
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    scroll-snap-align: center;
 }
 
 .brutal-card:hover {
@@ -621,7 +653,8 @@ body.light-theme::before {
    CONTACT SECTION
    ========================================= */
 .contact-content {
-    width: 100%;
+    width: 80vw;
+    max-width: 1200px;
     border: var(--border-thick);
     padding: 4rem;
     background-color: var(--color-bg);

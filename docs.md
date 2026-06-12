@@ -13,7 +13,7 @@ This project is a clean, monochromatic brutalist portfolio for a UI/UX designer.
 ## Public Facing Site (`index.html` & `main.js`)
 ### Key Features & Flow
 - **Splash Screen**: An automatic loading screen (`#splashScreen`) blocks the view initially and transitions out using CSS animations and JS timing.
-- **Theme Toggling**: A floating button allows the user to switch between light and dark modes. The preference is saved in `localStorage` under the key `theme`.
+- **Theme Toggling**: A floating button allows the user to switch between light and dark modes (defaults to light mode). The preference is saved in `localStorage` under the key `theme`.
 - **Custom Cursor**: On devices with fine pointers, a morphing glass-cursor follows the mouse and dynamically resizes and alters border-radius when hovering over interactive elements.
 - **Navigation**: A top navbar with an overlay effect that tracks the user's scroll position via the IntersectionObserver API, highlighting the active section in the menu.
 - **Dynamic Projects**: The featured projects section (`#projectsGrid`) is not hardcoded. `main.js` reads the `portfolioProjects` array from `localStorage` and injects the HTML cards into the DOM.
@@ -45,3 +45,4 @@ This project is a clean, monochromatic brutalist portfolio for a UI/UX designer.
 * **[2026-06-06]**: Changed admin dashboard password to `benrais123`.
 * **[2026-06-06]**: UI Bug Fixes: Removed drop shadow from project cards on hover and updated contact email link text to read "Send me an Email" instead of displaying the literal address.
 * **[2026-06-06]**: Converted the email text link into a primary button labeled "Email".
+* **[2026-06-12]**: Updated default theme to light mode instead of dark mode across the application.

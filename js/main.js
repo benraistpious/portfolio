@@ -3,12 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Theme Toggle Logic
     // -----------------------------------------
     const themeToggle = document.getElementById('themeToggle');
-    const currentTheme = localStorage.getItem('theme');
+    const currentTheme = localStorage.getItem('theme') || 'light';
     
     if (currentTheme === 'light') {
         document.body.classList.add('light-theme');
         if (themeToggle) themeToggle.innerHTML = '☾';
     } else {
+        document.body.classList.remove('light-theme');
         if (themeToggle) themeToggle.innerHTML = '☀';
     }
 
